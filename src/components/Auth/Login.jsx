@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
-const Login = () => {
+const Login = ({handleLogin}) => {
+
+    
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -10,6 +12,7 @@ const Login = () => {
         <div className=" border-2 border-emerald-600 p-20 rounded-xl ">
             <form onSubmit={(e)=>{
                 e.preventDefault()
+                handleLogin(email, password)
                 setEmail("")
                 setPassword("")
             }} className='flex flex-col items-center justify-center ' >
